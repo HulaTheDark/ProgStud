@@ -7,11 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--Back to top-->
+<body>
     <style>
+        #myBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom of the page */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: rgb(52, 18, 204);
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 15px;
+            /* Some padding */
+            border-radius: 10px;
+            /* Rounded corners */
+            font-size: 18px;
+            /* Increase font size */
+        }
+
+        #myBtn:hover {
+            background-color: rgb(57, 83, 201);
+            /* Add a dark-grey background on hover */
+        }
     </style>
+</body>
 </head>
 
 <body>
+
     <!-- Page name banner -->
     <div class="container-fluid p-4 bg-primary text-black text-center ">
         <h1 class="display-1">Ascii Art</h1>
@@ -30,8 +67,8 @@
             <!--Navigation-->
             <div class="col-12 col-md-3 p-2 bg-secondary  ">
                 <a href="/ProgStud/index.html">
-                    <img src="/ProgStud/Pictures/NytMig.jpg" class="btn rounded-circle mx-auto d-block" alt="Mig" width="200"
-                        height="260">
+                    <img src="/ProgStud/Pictures/NytMig.jpg" class="btn rounded-circle mx-auto d-block" alt="Mig"
+                        width="200" height="260">
                 </a>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item btn btn-dark btn-block mt-2">
@@ -45,9 +82,12 @@
                     <li class="nav-item dropdown btn btn-dark mt-2">
                         <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" href="#">Portfolio</a>
                         <ul type="button" class="dropdown-menu">
-                            <li><a class="dropdown-item text-center" href="/ProgStud/Pages/Gallerier.html">Gallerier</a></li>
-                            <li><a class="dropdown-item text-center" href="/ProgStud/Pages/ASCII ART.html">ASCII Art</a></li>
-                            <li><a class="dropdown-item text-center" href="/ProgStud/Pages/Planter.html">Planter</a></li>
+                            <li><a class="dropdown-item text-center" href="/ProgStud/Pages/Gallerier.html">Gallerier</a>
+                            </li>
+                            <li><a class="dropdown-item text-center" href="/ProgStud/Pages/ASCII ART.html">ASCII Art</a>
+                            </li>
+                            <li><a class="dropdown-item text-center" href="/ProgStud/Pages/Planter.html">Planter</a>
+                            </li>
 
                         </ul>
                     </li>
@@ -63,6 +103,8 @@
                 <hr class="mt-4">
             </div>
 
+
+
             <!--Pictures of Ascii-->
             <div class="col bg-dark">
                 <div class="row row-cols-lg-6">
@@ -70,14 +112,14 @@
                         <a href="../Pictures/ASCII ART/RightsideBKLS.png">
                             <img src="../Pictures/ASCII ART/RightsideBKLS.png" class=" img-fluid" alt="Bricks with /">
                         </a>
-                            <h5 class="card-title">Wall</h5>
-                            <p class="card-text lh-sm">Wall made with right sided slashes</p>
+                        <h5 class="card-title">Wall</h5>
+                        <p class="card-text lh-sm">Wall made with right sided slashes</p>
 
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/LeftsideBKLS.png">
                             <img src="../Pictures/ASCII ART/LeftsideBKLS.png" class="card-img img-fluid"
-                            alt="Bricks with \">
+                                alt="Bricks with \">
                         </a>
                         <h5 class="card-title">Wall</h5>
                         <p class="card-text lh-sm">Wall made with left sided slashes</p>
@@ -85,37 +127,38 @@
                     <div class="card">
                         <a href="../Pictures/ASCII ART/WallTippingRight.png">
                             <img src="../Pictures/ASCII ART/WallTippingRight.png" class=" img-fluid"
-                            alt="Wall tipping right">
+                                alt="Wall tipping right">
                         </a>
                         <h5 class="card-title ">Wall</h5>
                         <p class="card-text lh-sm">Wall looks like its tipping right</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/WallTippingLeft.png">
-                            <img src="../Pictures/ASCII ART/WallTippingLeft.png" class=" img-fluid" alt="Wall tipping Left">
+                            <img src="../Pictures/ASCII ART/WallTippingLeft.png" class=" img-fluid"
+                                alt="Wall tipping Left">
                         </a>
-                            <h5 class="card-title ">Wall</h5>
-                            <p class="card-text lh-sm">Wall looks like its tipping left</p>
+                        <h5 class="card-title ">Wall</h5>
+                        <p class="card-text lh-sm">Wall looks like its tipping left</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/CrossRoadDungeon.png">
                             <img src="../Pictures/ASCII ART/CrossRoadDungeon.png" class=" img-fluid"
-                            alt="Dungeon Crossroad">
+                                alt="Dungeon Crossroad">
                         </a>
                         <h5 class="card-title">Crossroad</h5>
-                        <p class="card-text lh-sm">Dungeon with a Crossroad</p> 
+                        <p class="card-text lh-sm">Dungeon with a Crossroad</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/DoorExitDungeon.png">
                             <img src="../Pictures/ASCII ART/DoorExitDungeon.png" class=" img-fluid" alt="Dungeon Exit">
                         </a>
-                            <h5 class="card-title">Door</h5>
-                            <p class="card-text lh-sm">A door for exit</p>
+                        <h5 class="card-title">Door</h5>
+                        <p class="card-text lh-sm">A door for exit</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/DoorUnknownDungeon.png">
                             <img src="../Pictures/ASCII ART/DoorUnknownDungeon.png" class=" img-fluid"
-                            alt="Whats behind that door?">
+                                alt="Whats behind that door?">
                         </a>
                         <h5 class="card-title">Door</h5>
                         <p class="card-text lh-sm">An unknown door, whats on the other side?</p>
@@ -124,100 +167,103 @@
                         <a href="../Pictures/ASCII ART/BricksStraight.png">
                             <img src="../Pictures/ASCII ART/BricksStraight.png" class=" img-fluid" alt="Bricks with |">
                         </a>
-                            <h5 class="card-title">Bricks</h5>
-                            <p class="card-text lh-sm">Straight brick wall</p>
+                        <h5 class="card-title">Bricks</h5>
+                        <p class="card-text lh-sm">Straight brick wall</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/Wall.png">
                             <img src="../Pictures/ASCII ART/Wall.png" class=" img-fluid" alt="Wall">
                         </a>
-                            <h5 class="card-title ">Wall</h5>
-                            <p class="card-text lh-sm">Just a plain wall</p>
+                        <h5 class="card-title ">Wall</h5>
+                        <p class="card-text lh-sm">Just a plain wall</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/SunnyCow.png">
                             <img src="../Pictures/ASCII ART/SunnyCow.png" class=" img-fluid" alt="Cow in the sun">
                         </a>
-                            <h5 class="card-title">Cow</h5>
-                            <p class="card-text lh-sm">A cow standing in a sunny field</p>
+                        <h5 class="card-title">Cow</h5>
+                        <p class="card-text lh-sm">A cow standing in a sunny field</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/FireElement.png">
                             <img src="../Pictures/ASCII ART/FireElement.png" class=" img-fluid" alt="Fire elemenatal">
                         </a>
-                            <h5 class="card-title">Monster</h5>
-                            <p class="card-text lh-sm">Fire elemenatal</p>
+                        <h5 class="card-title">Monster</h5>
+                        <p class="card-text lh-sm">Fire elemenatal</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/GoatieMan.png">
                             <img src="../Pictures/ASCII ART/GoatieMan.png" class=" img-fluid" alt="Man With a goatie">
                         </a>
-                            <h5 class="card-title">Man</h5>
-                            <p class="card-text lh-sm">a man with a goatie</p>
+                        <h5 class="card-title">Man</h5>
+                        <p class="card-text lh-sm">a man with a goatie</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/WallOfTheGiant.png">
-                            <img src="../Pictures/ASCII ART/WallOfTheGiant.png" class=" img-fluid" alt="Wall of the giant">
+                            <img src="../Pictures/ASCII ART/WallOfTheGiant.png" class=" img-fluid"
+                                alt="Wall of the giant">
                         </a>
-                            <h5 class="card-title">Giant</h5>
-                            <p class="card-text lh-sm">The wall of the giant</p> 
+                        <h5 class="card-title">Giant</h5>
+                        <p class="card-text lh-sm">The wall of the giant</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/WallPainting.png">
                             <img src="../Pictures/ASCII ART/WallPainting.png" class=" img-fluid"
-                            alt="Old painting on the wall">
+                                alt="Old painting on the wall">
                         </a>
                         <h5 class="card-title">Wall Painting</h5>
                         <p class="card-text lh-sm">Who have made this, and when did they make it?</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/RiverArea.png">
-                            <img src="../Pictures/ASCII ART/RiverArea.png" class="img-fluid" alt="Finally we found water">
+                            <img src="../Pictures/ASCII ART/RiverArea.png" class="img-fluid"
+                                alt="Finally we found water">
                         </a>
-                            <h5 class="card-title">River Area</h5>
-                            <p class="card-text lh-sm">Nothing like the beautiful nature</p>
+                        <h5 class="card-title">River Area</h5>
+                        <p class="card-text lh-sm">Nothing like the beautiful nature</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/Sun.png">
                             <img src="../Pictures/ASCII ART/Sun.png" class="img-fluid" alt="Dont look at it too much">
                         </a>
-                            <h5 class="card-title">Sun</h5>
-                            <p class="card-text lh-sm">Don`t look directly in it</p>
+                        <h5 class="card-title">Sun</h5>
+                        <p class="card-text lh-sm">Don`t look directly in it</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/Pyramid2.png">
                             <img src="../Pictures/ASCII ART/Pyramid2.png" class=" img-fluid" alt="Pyramid nr 2">
                         </a>
-                            <h5 class="card-title">Pyramid</h5>
-                            <p class="card-text lh-sm">One of the many wonders of mankind</p>
+                        <h5 class="card-title">Pyramid</h5>
+                        <p class="card-text lh-sm">One of the many wonders of mankind</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/Tempel.png">
                             <img src="../Pictures/ASCII ART/Tempel.png" class=" img-fluid" alt="Tempel">
                         </a>
-                            <h5 class="card-title">Tempel</h5>
-                            <p class="card-text lh-sm">Which kind of people made this?</p>
+                        <h5 class="card-title">Tempel</h5>
+                        <p class="card-text lh-sm">Which kind of people made this?</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/LongRoad.png">
                             <img src="../Pictures/ASCII ART/LongRoad.png" class=" img-fluid" alt="Long road">
                         </a>
-                            <h5 class="card-title">Long Road</h5>
-                            <p class="card-text lh-sm">The long and lonely road</p>
+                        <h5 class="card-title">Long Road</h5>
+                        <p class="card-text lh-sm">The long and lonely road</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/Pyramid.png">
                             <img src="../Pictures/ASCII ART/Pyramid.png" class=" img-fluid" alt="Pyramid">
                         </a>
-                            <h5 class="card-title">Pyramid</h5>
-                            <p class="card-text lh-sm">Is it inca or egyptian?</p>
+                        <h5 class="card-title">Pyramid</h5>
+                        <p class="card-text lh-sm">Is it inca or egyptian?</p>
                     </div>
                     <div class="card">
                         <a href="../Pictures/ASCII ART/Cup-Entrance.png">
-                            <img src="../Pictures/ASCII ART/Cup-Entrance.png" class=" img-fluid" alt="Cup or a entrance">
+                            <img src="../Pictures/ASCII ART/Cup-Entrance.png" class=" img-fluid"
+                                alt="Cup or a entrance">
                         </a>
-                            <h5 class="card-title">Cup/Entrance</h5>
-                            <p class="card-text lh-sm">Is it a cup or is it an entrance, maybe it is both?</p> 
+                        <h5 class="card-title">Cup/Entrance</h5>
+                        <p class="card-text lh-sm">Is it a cup or is it an entrance, maybe it is both?</p>
                     </div>
                 </div>
             </div>
@@ -232,4 +278,29 @@
         <h6 class="display-6"></h6>
     </div>
     <hr>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+
 </body>
