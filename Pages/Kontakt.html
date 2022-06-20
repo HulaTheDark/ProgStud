@@ -10,6 +10,41 @@
     <!--Back to top-->
 
 <body {font-family: Arial, Helvetica, sans-serif;} * {box-sizing: border-box;}>
+    <script>
+        $(document).ready(function (e) {
+            $("#frmContact").on('submit', (function (e) {
+                e.preventDefault();
+                $("#mail-status").hide();
+                $('#send-message').hide();
+                $('#loader-icon').show();
+                $.ajax({
+                    url: "contact.php",
+                    type: "POST",
+                    dataType: 'json',
+                    data: {
+                        "name": $('input[name="name"]').val(),
+                        "email": $('input[name="email"]').val(),
+                        "phone": $('input[name="phone"]').val(),
+                        "content": $('textarea[name="content"]').val(),
+                        "g-recaptcha-response": $('textarea[id="g-recaptcha-response"]').val()
+                    },
+                    success: function (response) {
+                        $("#mail-status").show();
+                        $('#loader-icon').hide();
+                        if (response.type == "error") {
+                            $('#send-message').show();
+                            $("#mail-status").attr("class", "error");
+                        } else if (response.type == "message") {
+                            $('#send-message').hide();
+                            $("#mail-status").attr("class", "success");
+                        }
+                        $("#mail-status").html(response.text);
+                    },
+                    error: function () { }
+                });
+            }));
+        });
+    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -56,7 +91,105 @@
             background-color: #adaaaa;
             padding: 20px;
         }
+
+        .label {
+            margin: 2px 0;
+        }
+
+        .field {
+            margin: 0 0 20px 0;
+        }
+
+        .content {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2 {
+            font-family: "Georgia", Times, serif;
+            font-weight: normal;
+        }
+
+        div#central {
+            margin: 40px 0px 100px 0px;
+        }
+
+        @media all and (min-width: 768px) and (max-width: 979px) {
+            .content {
+                width: 750px;
+            }
+        }
+
+        @media all and (max-width: 767px) {
+            body {
+                margin: 0 auto;
+                word-wrap: break-word
+            }
+
+            .content {
+                width: auto;
+            }
+
+            div#central {
+                margin: 40px 20px 100px 20px;
+            }
+        }
+
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            background: #ffffff;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+            font-size: initial;
+            line-height: 1.7em;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            border: 1px solid #A1A1A1;
+        }
+
+        button {
+            padding: 12px 60px;
+            background: #5BC6FF;
+            border: none;
+            color: rgb(40, 40, 40);
+            font-size: 1em;
+            font-family: "Georgia", Times, serif;
+            cursor: pointer;
+        }
+
+        #message {
+            padding: 0px 40px 0px 0px;
+        }
+
+        #mail-status {
+            padding: 12px 20px;
+            width: 100%;
+            display: none;
+            font-size: 1em;
+            font-family: "Georgia", Times, serif;
+            color: rgb(40, 40, 40);
+        }
+
+        .error {
+            background-color: #F7902D;
+            margin-bottom: 40px;
+        }
+
+        .success {
+            background-color: #48e0a4;
+        }
+
+        .g-recaptcha {
+            margin: 0 0 25px 0;
+        }
     </style>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </body>
 <link rel="stylesheet" href="../css/ToTopButton.css">
 </head>
@@ -116,23 +249,64 @@
             </div>
             <!--Kontakt form-->
             <div class="col-12 col-md-5 offset-md-2 bg-dark text-info p-2">
-                <form action="mailto:someone@example.com" method="post" enctype="text/plain">
-                    <label for="fname">Fornavn og efternavn</label><br>
-                    <input type="text" id="fname" name="firstname" placeholder="Fornavn.."><input type="text" id="lname"
-                        name="lastname" placeholder="Efternavn.."><br>
+                <form name="frmContact" id="frmContact" action="mailto:someone@example.com" method="post"
+                    novalidate="novalidate">
 
-                    <label for="lname">Virksomehedens navn og adresse</label><br>
-                    <input type="text" id="vname" name="companyname" placeholder="Virksomhed, Adresse.."><br>
+                    <div class="label">Fornavn:</div>
+                    <div class="field">
 
-                    <label for="lname">Email</label><br>
-                    <input type="text" id="ename" name="email" placeholder="Email.."><br>
+                        <input type="text" id="firstname" name="firstname" placeholder="Fornavn.."
+                            title="Please enter your name" class="required firstname" aria-required="true" required>
+                    </div>
+                    <div class="label">Efternavn:</div>
+                    <div class="field">
 
-                    <label for="subject">Emne</label><br>
-                    <textarea id="subject" name="subject"
-                        placeholder="Her kan du for eksempel skrive hvad i laver og hvad i kan tilbyde, eller man kan stille et spørgsmål.."
-                        style="height:200px"></textarea>
+                        <input type="text" id="lastname" name="lastname" placeholder="Efternavn.."
+                            title="Please enter your name" class="required lastname" aria-required="true" required>
 
-                    <input type="submit" value="Submit">
+                    </div>
+                    <div class="label">Virksomehedens navn og adresse:</div>
+                    <div class="field">
+
+                        <input type="text" id="company" name="companyname"
+                            placeholder="Virksomehedens navn og adresse.." title="Please enter your name"
+                            class="required companyname" aria-required="true" required>
+                    </div>
+
+                    <div class="label">Email:</div>
+                    <div class="field">
+
+                        <input type="text" id="email" name="email" placeholder="Email.." title="Please enter your name"
+                            class="required email" aria-required="true" required>
+                    </div>
+
+                    <div class="label">Telefon nummer:</div>
+                    <div class="field">
+                        <input type="text" id="phone" name="phone" placeholder="Nummer.."
+                            title="Please enter your phone number" class="required phone" aria-required="true" required>
+                    </div>
+                    <label>Besked:</label>
+                    <div class="field">
+                        <textarea name="content" id="comment-content" class="input-field" cols="40" rows="4"
+                            placeholder="Her kan du for eksempel skrive hvad i laver og hvad i kan tilbyde, eller man kan stille et spørgsmål.."></textarea>
+                    </div>
+
+
+                    <div>
+                        <input type="submit" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit' data-action='submit' id="send-message" name="send" class="btn-submit g-recaptcha" value="Send" />
+                        <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'
+                        data-action='submit'>Submit</button>
+                        <div id="statusMessage">
+                            <?php
+                                if (! empty($message)) {
+                                    ?>
+                            <p class='<?php echo $type; ?>Message'>
+                                <?php echo $message; ?>
+                            </p>
+                            <?php
+                                }
+                                ?>
+                        </div>
                 </form>
             </div>
         </div>
@@ -145,6 +319,12 @@
     <hr>
     <!--Back to top-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <script>
+        function onSubmit(token) {
+            document.getElementById("frmContact").submit();
+        }
+    </script>
 
     <script src="../JS/ToTop.js"></script>
 
