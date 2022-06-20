@@ -250,7 +250,69 @@
             </div>
             <!--Kontakt form-->
             <div class="col-12 col-lg-7 offset-md-1 bg-dark text-info p-2">
-               
+                <div id="central">
+                    <div class="content">
+                        <div id="message">
+                            <form id="frmContact" action="" method="POST" novalidate="novalidate">
+
+                                <div class="label">Fornavn:</div>
+                                <div class="field">
+            
+                                    <input type="text" id="firstname" name="firstname" placeholder="Fornavn.." width="5"
+                                        title="Please enter your name" class="required firstname" aria-required="true" required>
+                                </div>
+                                <div class="label">Efternavn:</div>
+                                <div class="field">
+            
+                                    <input type="text" id="lastname" name="lastname" placeholder="Efternavn.."
+                                        title="Please enter your name" class="required lastname" aria-required="true" required>
+            
+                                </div>
+                                <div class="label">Virksomehedens navn og adresse:</div>
+                                <div class="field">
+            
+                                    <input type="text" id="company" name="companyname"
+                                        placeholder="Virksomehedens navn og adresse.." title="Please enter your name"
+                                        class="required companyname" aria-required="true" required>
+                                </div>
+            
+                                <div class="label">Email:</div>
+                                <div class="field">
+            
+                                    <input type="text" id="email" name="email" placeholder="Email.." title="Please enter your name"
+                                        class="required email" aria-required="true" required>
+                                </div>
+            
+                                <div class="label">Telefon nummer:</div>
+                                <div class="field">
+                                    <input type="text" id="phone" name="phone" placeholder="Nummer.."
+                                        title="Please enter your phone number" class="required phone" aria-required="true" required>
+                                </div>
+                                <label>Besked:</label>
+                                <div class="field">
+                                    <textarea name="content" id="comment-content" class="input-field" cols="40" rows="4"
+                                        placeholder="Her kan du for eksempel skrive hvad i laver og hvad i kan tilbyde, eller man kan stille et spørgsmål.."></textarea>
+                                </div>
+            
+            
+                                <div>
+                                    <input type="submit" data-sitekey="<?php echo SITE_KEY; ?>" data-callback='onSubmit' data-action='submit' id="send-message" name="send" class="btn-submit g-recaptcha" value="Send" />
+            
+                                    <div id="statusMessage">
+                                        <?php
+                                            if (! empty($message)) {
+                                                ?>
+                                        <p class='<?php echo $type; ?>Message'>
+                                            <?php echo $message; ?>
+                                        </p>
+                                        <?php
+                                            }
+                                            ?>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 
             </div>
         </div>
