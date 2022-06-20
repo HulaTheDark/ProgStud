@@ -34,7 +34,7 @@ require('constant.php');
 	//reCAPTCHA validation
 	if (isset($_POST['g-recaptcha-response'])) {
 		
-		require('component/recaptcha/src/autoload.php');		
+		require('/component/recaptcha/src/autoload.php');		
 		
 		$recaptcha = new \ReCaptcha\ReCaptcha(SECRET_KEY);
 
@@ -46,7 +46,7 @@ require('constant.php');
 		  }	
 	}
 	
-	$toEmail = "member@testdomain.com";
+	$toEmail = "michaelrichs@gmail.com";
 	$mailHeaders = "From: " . $user_name . "<" . $user_email . ">\r\n";
 	$mailBody = "User Name: " . $user_name . "\n";
 	$mailBody .= "User Email: " . $user_email . "\n";

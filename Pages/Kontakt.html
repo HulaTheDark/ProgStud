@@ -250,8 +250,7 @@
             </div>
             <!--Kontakt form-->
             <div class="col-12 col-md-5 offset-md-2 bg-dark text-info p-2">
-                <form name="frmContact" id="frmContact" action="mailto:michaelrichs@gmail.com" method="post"
-                    novalidate="novalidate">
+                <form id="frmContact" action="" method="POST" novalidate="novalidate">
 
                     <div class="label">Fornavn:</div>
                     <div class="field">
@@ -320,11 +319,7 @@
     <!--Back to top-->
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-    <script>
-        function onSubmit(token) {
-            document.getElementById("frmContact").submit();
-        }
-    </script>
+
 
     <script src="../JS/ToTop.js"></script>
 
