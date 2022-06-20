@@ -250,37 +250,31 @@
             </div>
             <!--Kontakt form-->
             <div class="col-12 col-md-5 offset-md-2 bg-dark text-info p-2">
-                <form name="frmContact" id="frmContact" action="mailto:michaelrichs@gmail.com" method="post"
+                <form id="frmContact" action="mailto:michaelrichs@gmail.com" method="POST"
                     novalidate="novalidate">
 
                     <div class="label">Fornavn:</div>
                     <div class="field">
-
                         <input type="text" id="firstname" name="firstname" placeholder="Fornavn.."
                             title="Please enter your name" class="required firstname" aria-required="true" required>
                     </div>
                     <div class="label">Efternavn:</div>
                     <div class="field">
-
                         <input type="text" id="lastname" name="lastname" placeholder="Efternavn.."
                             title="Please enter your name" class="required lastname" aria-required="true" required>
-
                     </div>
                     <div class="label">Virksomehedens navn og adresse:</div>
                     <div class="field">
-
                         <input type="text" id="company" name="companyname"
                             placeholder="Virksomehedens navn og adresse.." title="Please enter your name"
                             class="required companyname" aria-required="true" required>
                     </div>
-
                     <div class="label">Email:</div>
                     <div class="field">
 
                         <input type="text" id="email" name="email" placeholder="Email.." title="Please enter your name"
                             class="required email" aria-required="true" required>
                     </div>
-
                     <div class="label">Telefon nummer:</div>
                     <div class="field">
                         <input type="text" id="phone" name="phone" placeholder="Nummer.."
@@ -294,7 +288,9 @@
 
 
                     <div>
-                        <input type="submit" data-sitekey="6Le1T4UgAAAAAKF3AI_9cnTPTcdkSM4Sy40fJBNK" data-callback='onSubmit' data-action='submit' id="send-message" name="send" class="btn-submit g-recaptcha" value="Send" />
+                        <input type="submit" data-sitekey="6Le1T4UgAAAAAKF3AI_9cnTPTcdkSM4Sy40fJBNK"
+                            data-callback='onSubmit' data-action='submit' id="send-message" name="send"
+                            class="btn-submit g-recaptcha" value="Send" />
 
                         <div id="statusMessage">
                             <?php
