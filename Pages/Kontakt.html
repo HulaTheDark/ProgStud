@@ -250,8 +250,7 @@
             </div>
             <!--Kontakt form-->
             <div class="col-12 col-md-5 offset-md-2 bg-dark text-info p-2">
-                <form id="frmContact" action="mailto:michaelrichs@gmail.com" method="POST"
-                    novalidate="novalidate">
+                <form id="frmContact" action="mailto:michaelrichs@gmail.com" method="POST" novalidate="novalidate">
 
                     <div class="label">Fornavn:</div>
                     <div class="field">
@@ -286,23 +285,22 @@
                             placeholder="Her kan du for eksempel skrive hvad i laver og hvad i kan tilbyde, eller man kan stille et spørgsmål.."></textarea>
                     </div>
 
-
+                    <input type="Submit" id="send-message" class="btn-submit btn-primary">
+                    <p></p>
                     <div>
-                        <input type="submit" data-sitekey="<?php echo SITE_KEY; ?>"
-                            data-callback='onSubmit' data-action='submit' id="send-message" name="send"
-                            class="btn-submit g-recaptcha" value="Send" />
-
-                        <div id="statusMessage">
-                            <?php
+                        <div data-sitekey="<?php echo SITE_KEY; ?>" class="g-recaptcha">
+                    </div>
+                    <div id="statusMessage">
+                        <?php
                                 if (! empty($message)) {
                                     ?>
-                            <p class='<?php echo $type; ?>Message'>
-                                <?php echo $message; ?>
-                            </p>
-                            <?php
+                        <p class='<?php echo $type; ?>Message'>
+                            <?php echo $message; ?>
+                        </p>
+                        <?php
                                 }
                                 ?>
-                        </div>
+                    </div>
                 </form>
             </div>
         </div>
